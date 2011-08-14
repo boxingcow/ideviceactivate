@@ -116,7 +116,7 @@ char* get_from_cache(const char *what)
 	char fname[512];
 	snprintf(fname, 512, "%s/%s", cachedir, what);
 
-	char d[BUFSIZE];
+	static char d[BUFSIZE];
 	read_file((const char *)fname, d);
 
 	return (char *)d;
